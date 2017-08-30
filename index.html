@@ -4,15 +4,35 @@
         <script type="application/javascript" src="js/jquery-2.2.1.min.js"></script>
         <script type="application/javascript" src="js/video.js"></script>
         <title>Robby TV</title>
-        
-         <meta name="viewport"
+
+        <meta name="viewport"
               content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        
-        
+
+        <script>
+            $(document).ready(function(){
+                console.info($("#video").width());
+
+                var posicion=$("#video").width();
+                
+                                
+                $('#jwplayer').css({
+            width: posicion,
+                    height:posicion*9/16
+           
+        });
+
+            });
+        </script>
+
+
         <style type="text/css">
 
-
+footer{
+  position: absolute;
+            top: 636px;
+            left: 0px ;
+}
 
             .logo img{
                 width: 32px;
@@ -36,7 +56,7 @@
                 border-bottom:1px solid rgb(228,228,230);
                 padding: 10px;
                 box-sizing:border-box;
-                 font-size:1em;font-family:'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,sans-serif;color:#000;
+                font-size:1em;font-family:'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,sans-serif;color:#000;
                 font-weight: bold;
             }
 
@@ -57,51 +77,20 @@
                 margin: 0px;
                 padding: 0px;
             }
-            #contenendor {
-                display:table;
-                width: 100%;
-                margin: 0px;
-                padding: 0px;
-            }
-            
+
+
             #bar{
-            text-align: center;
+                text-align: center;
                 background-color: rgb(66,148,251);
                 color:white;
-                                font-weight: bold;
+                font-weight: bold;
                 height: 55px;
-                
+
             }
-            
+
             #texto{
-            padding-top: 20px;
+                padding-top: 20px;
             }
-            
-            #row {
-                display: table-row; /* Define el bloque como una linea de una tabla */
-                margin:0px;
-                padding:0px;
-            }
-            #Contenido {
-                display: table-cell; /* Esto convierte al div en una celda de una tabla...*/
-                width: 250px;
-                background-color: white;
-                position: fixed;
-                top: 0;
-                left: 0;
-                height: 100%;
-                                border-right: 1px solid rgb(228,228,230);
-
-            }
-            #derecho {
-                padding: 10px 10px 10px 260px;
-                display: table-cell;
-
-
-            }
-
-
-
 
 
             .separador{
@@ -123,84 +112,100 @@
                 font-size:1em;font-family:'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,sans-serif;color:#000;
                 font-weight: bold;
             }
+
+
+            #listaCanales{
+                width: 30%;
+                float: left;
+                height: 100%;
+                border: 1px solid red;
+                box-sizing: border-box;
+            }
+            #video{
+                width: 70%;
+                float: left;
+                border: 1px solid blue;
+                box-sizing: border-box;
+
+                padding: 40px;
+
+            }
         </style>
     </head>
 
     <body>
-        <div id="contenedor">
-            <div id="row">
-                <div id="Contenido">
-                    
-                    <div id="bar">
-                        <div id="texto">
-                                             Canales
+        <div id="row">
+            <div id="listaCanales">
 
-                        </div>
+                <div id="bar">
+                    <div id="texto">
+                        Robby Moyano
+
                     </div>
-                   
-                   
-
-                    <div class="celda celdaActiva" canal="canal13">
-                        <img src="images/13.png"/>
-                        <div class="title">Canal 13</div>
-                    </div>
-
-                    <div class="celda" canal="mega">
-                        <img src="images/mega.png"/>
-                        <div class="title">Mega</div>
-                    </div>
-
-                    <div class="celda" canal="tvn">
-                        <img src="images/tvn.png"/>
-                        <div class="title">Tvn</div>
-                    </div>
-
-                    <div class="celda " canal="chv">
-                        <img src="images/chv.png"/>
-                        <div class="title">Chilevisión</div>
-                    </div>
-
-                    <div class="celda " canal="lared">
-                        <img src="images/lared.png"/>
-                        <div class="title">La red</div>
-                    </div>
-
-                    <div class="celda " canal="pura">
-                        <img src="images/pura.jpg"/>
-                        <div class="title">pura noticia</div>
-                    </div>
-
-                    <div class="celda " canal="13cable">
-                        <img src="images/13cable.png"/>
-                        <div class="title">Canal 13 Cable</div>
-                    </div>
-
-                    <div class="celda " canal="ucv">
-                        <img src="images/ucv.png"/>
-                        <div class="title">UCV</div>
-                    </div>
-
-
-  
-
                 </div>
 
 
 
-
-
-                <div id="derecho">
-                    <div style="font-size:2.3em;font-family:'HelveticaNeue-UltraLight','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,sans-serif;color:#000;">Canal 13</div>
-
-                 
-<iframe src="https://content.jwplatform.com/players/wnTWML3T-KKmf3dNa.html" width="700px" height="394px" frameborder="0" scrolling="auto" allowfullscreen style="position:absolute;"></iframe>
-                    
-                    
-                    <p>Creado por Robby Moyano Toledo</p>
-                    <div style="font-family:'Roboto-Light',Roboto,Arial,sans-serif;">
-
-                    </div>   
+                <div class="celda celdaActiva" canal="canal13">
+                    <img src="images/13.png"/>
+                    <div class="title">Canal 13</div>
                 </div>
+
+                <div class="celda" canal="mega">
+                    <img src="images/mega.png"/>
+                    <div class="title">Mega</div>
+                </div>
+
+                <div class="celda" canal="tvn">
+                    <img src="images/tvn.png"/>
+                    <div class="title">Tvn</div>
+                </div>
+
+                <div class="celda " canal="chv">
+                    <img src="images/chv.png"/>
+                    <div class="title">Chilevisión</div>
+                </div>
+
+                <div class="celda " canal="lared">
+                    <img src="images/lared.png"/>
+                    <div class="title">La red</div>
+                </div>
+
+                <div class="celda " canal="pura">
+                    <img src="images/pura.jpg"/>
+                    <div class="title">pura noticia</div>
+                </div>
+
+                <div class="celda " canal="13cable">
+                    <img src="images/13cable.png"/>
+                    <div class="title">Canal 13 Cable</div>
+                </div>
+
+                <div class="celda " canal="ucv">
+                    <img src="images/ucv.png"/>
+                    <div class="title">UCV</div>
+                </div>
+
+
+               
+
+            </div>
+
+
+
+
+
+            <div id="video">
+                <div style="font-size:2.3em;font-family:'HelveticaNeue-UltraLight','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,sans-serif;color:#000;">Canal 13</div>
+
+                
+<iframe id="jwplayer" src="https://content.jwplatform.com/players/wnTWML3T-KKmf3dNa.html" frameborder="0" scrolling="auto" allowfullscreen style="position:absolute;"></iframe>
+
+
+                <p>Creado por Robby Moyano Toledo</p>
+                <div style="font-family:'Roboto-Light',Roboto,Arial,sans-serif;">
+
+                </div>   
             </div>
         </div>
     </body>
