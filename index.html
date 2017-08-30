@@ -11,28 +11,29 @@
 
         <script>
             $(document).ready(function(){
-                console.info($("#video").width());
-
-                var posicion=$("#video").width();
-                
-                                
-                $('#jwplayer').css({
-            width: posicion,
-                    height:posicion*9/16
-           
-        });
-
+                redimencionarVideo();
+                $(window).resize(function() {
+                    redimencionarVideo();
+                });
             });
+
+            function redimencionarVideo(){
+                var posicion=$("#video").width();
+                $('#jwplayer').css({
+                    width: posicion,
+                    height:posicion*9/16
+                });
+            }
         </script>
 
 
         <style type="text/css">
 
-footer{
-  position: absolute;
-            top: 636px;
-            left: 0px ;
-}
+            footer{
+                position: absolute;
+                top: 636px;
+                left: 0px ;
+            }
 
             .logo img{
                 width: 32px;
@@ -85,7 +86,6 @@ footer{
                 color:white;
                 font-weight: bold;
                 height: 55px;
-
             }
 
             #texto{
@@ -118,16 +118,17 @@ footer{
                 width: 30%;
                 float: left;
                 height: 100%;
-                border: 1px solid red;
                 box-sizing: border-box;
+                overflow-y: scroll;
+                border-right: 1px solid rgb(228,228,230);
             }
             #video{
                 width: 70%;
                 float: left;
-                border: 1px solid blue;
                 box-sizing: border-box;
-
-                padding: 40px;
+                position: fixed;
+                left: 30%;
+                padding: 30px;
 
             }
         </style>
@@ -140,11 +141,8 @@ footer{
                 <div id="bar">
                     <div id="texto">
                         Robby Moyano
-
                     </div>
                 </div>
-
-
 
                 <div class="celda celdaActiva" canal="canal13">
                     <img src="images/13.png"/>
@@ -185,27 +183,15 @@ footer{
                     <img src="images/ucv.png"/>
                     <div class="title">UCV</div>
                 </div>
-
-
-               
-
             </div>
 
-
-
-
-
             <div id="video">
-                <div style="font-size:2.3em;font-family:'HelveticaNeue-UltraLight','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,sans-serif;color:#000;">Canal 13</div>
-
-                
-<iframe id="jwplayer" src="https://content.jwplatform.com/players/wnTWML3T-KKmf3dNa.html" frameborder="0" scrolling="auto" allowfullscreen style="position:absolute;"></iframe>
+                <div style="font-size:2.3em;font-family:'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,sans-serif;color:#000;">Canal 13</div>
 
 
-                <p>Creado por Robby Moyano Toledo</p>
-                <div style="font-family:'Roboto-Light',Roboto,Arial,sans-serif;">
+                <iframe id="jwplayer" src="https://content.jwplatform.com/players/wnTWML3T-KKmf3dNa.html" frameborder="0" scrolling="auto" allowfullscreen style="position:absolute;"></iframe>
 
-                </div>   
+
             </div>
         </div>
     </body>
